@@ -28,7 +28,7 @@
                 $_SESSION['userid'] = $row['user_id'];
 
                 
-                header("location: /forum/index.php?loginsuccess=$success");
+                header("location: /capstone/index.php?loginsuccess=$success");
             }
 
             else
@@ -43,7 +43,7 @@
             $showError = "Account does not exist for this username. Please Signup first then login";
         }
      
-        header("location: /forum/index.php?loginsuccess=$success&error=$showError");
+        header("location: /capstone/index.php?loginsuccess=$success&error=$showError");
     }
 
 ?>

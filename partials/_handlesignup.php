@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             if($result)
             {
                 $success = "true";
-                header("location: /forum/index.php?signupsuccess=$success");
+                header("location: /capstone/index.php?signupsuccess=$success");
                 exit;
             }
         }
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     }
     
 
-    header("location: /forum/index.php?signupsuccess=$success&error=$showError");
+    header("location: /capstone/index.php?signupsuccess=$success&error=$showError");
 }
 
 ?>

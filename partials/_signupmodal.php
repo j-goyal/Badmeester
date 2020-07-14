@@ -10,7 +10,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form method="post" action="/forum/partials/_handlesignup.php">
+                <form method="post" action="/capstone/partials/_handlesignup.php">
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input type="text" class="form-control" id="username" name="username" placeholder="Choose a unique username"required>

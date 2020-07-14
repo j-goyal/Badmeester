@@ -4,7 +4,7 @@
         session_unset();
         session_destroy();
 
-        header("location: /forum/index.php?logged=true");
+        header("location: /capstone/index.php?logged=true");
 
 
         exit;
