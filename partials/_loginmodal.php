@@ -1,7 +1,7 @@
 <!-- Modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
     aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="loginModalLabel">Login to Badmeester</h5>
@@ -12,9 +12,9 @@
             <div class="modal-body">
                 <form method="post" action="/capstone/partials/_handlelogin.php">
                     <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" class="form-control" id="username" name="username"
-                            placeholder="Enter username" required>
+                        <label for="loginphone">Enter Phone number</label>
+                        <input type="text" class="form-control" id="loginphone" name="loginphone"
+                            placeholder="Enter Your registered Phone number" required>
                     </div>
 
                     <div class="form-group">
