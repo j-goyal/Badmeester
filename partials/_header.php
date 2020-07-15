@@ -16,7 +16,7 @@ echo '<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                         <a class="nav-link" href="/capstone">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Google Maps</a>
+                        <a class="nav-link" href="maps.php">Google Maps</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.php">About</a>
