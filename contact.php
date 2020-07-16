@@ -16,13 +16,14 @@
             color: #339966;
         }
         h3{
-            line-height: 20%;
+             margin-top: 26px;
+             margin-bottom: 10px;
         }
         p{
-            margin-top:4%;
-            line-height:35%;
-            padding-bottom: 30px;
             padding-left: 10px;
+            padding-bottom: 8px;
+            margin: 0px 0px;
+            font-family: sans-serif;
         }
       
     </style>
@@ -35,6 +36,53 @@
     <?php include 'partials/_dbconnect.php'; ?>
 
 
+    <?php 
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST')
+        {
+            $name = $_POST['name'];
+            $email = $_POST['email'];
+            $phone = $_POST['phone'];
+            $content = $_POST['content'];
+
+            if (strlen($name)<=3 or strlen($email)<=5 or strlen($phone)!=10 or strlen($content)<=4)
+            {
+                echo '<div class="alert alert-danger alert-dismissible fade show mb-0" role="alert">
+                        <strong>Error !</strong> Please fill the form correctly.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>';
+            }
+                
+            else
+            {
+                // XSS attack prevention
+               /*  $name = str_replace("<", "&lt;", $name);
+                $name = str_replace(">", "&gt;", $name);
+                $email = str_replace("<", "&lt;", $email);
+                $email = str_replace(">", "&gt;", $email);
+                $phone = str_replace("<", "&lt;", $phone);
+                $phone = str_replace(">", "&gt;", $phone);
+                $content = str_replace("<", "&lt;", $content);
+                $content = str_replace(">", "&gt;", $content);
+ */
+                $sql = "INSERT INTO `contacts` (`name`, `email`, `phone`, `content`) VALUES ('$name', '$email', '$phone', '$content');";
+                $result = mysqli_query($conn, $sql);
+
+                if($result)
+                {
+                    echo '<div class="alert alert-success alert-dismissible fade show mb-0" role="alert">
+                            <strong>Success !</strong> Thankyou for contacting us. Your message has been successfully sent.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>';
+                }
+            }
+         
+        }
+    ?>
 
     <div class="container">
         <div class="jumbotron jumbotron-sm" style="background-color:#339966;margin-top:2%;color:white;margin-right:-30px">
@@ -51,18 +99,18 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="well">
-                    <h3><i class="fa fa-home fa-1x"></i> Address:</h3>
+                    <h3><i class="fa fa-home fa-1x"></i> Address</h3>
                     <p>Thapar University, P.O. Box 32, Patiala, Pin - 147004</p>
                     
-                    <h3><i class="fa fa-envelope fa-1x"></i> E-Mail Address:</h3>
+                    <h3><i class="fa fa-envelope fa-1x"></i> E-Mail Address</h3>
+                    <p>info@birisi.com</p>
                     <p>info@birisi.com</p>
                     
                     <h3><i class="fa fa-user fa-1x"></i> Phone Number</h3>
                     <p>123456789</p>
                     
                     <h3><i class="fa fa-yelp fa-1x"></i> Support Center</h3>
-                    <p><a href="siteadresi.com/destek">siteadresi.com/destek</a>
-                    </p>
+                    <p>siteadresi.com/destek</p>
                 </div>
             </div>
             <div class="col-sm-6" style="margin: 0px -10px; padding: 0px 0px">
@@ -73,9 +121,9 @@
         </div>
     </div>
 
-    <div class="container my-5">
-        <h1 style="margin: 20px 0px;">Your Query:</h1>
-        <form method="post" action=''>
+    <div class="container my-5 py-2">
+        <h1 style="margin: 20px 0px;">Your Query</h1>
+        <form method="post" action='contact.php'>
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name" required>
