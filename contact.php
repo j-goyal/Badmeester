@@ -113,10 +113,10 @@
                     <p>siteadresi.com/destek</p>
                 </div>
             </div>
-            <div class="col-sm-6" style="margin: 0px -10px; padding: 0px 0px">
+            <div class="col-sm-6" style="margin: 0px -44px; padding: 0px 0px">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13771.175861412305!2d76.3688073!3d30.3568049!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa7f6232cbef903a4!2sThapar+Institute+of+Engineering+and+Technology+University!5e0!3m2!1sen!2sin!4v1500631550669"
-                    width="600" height="430" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    width="630" height="430" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
         </div>
     </div>
