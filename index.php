@@ -55,7 +55,7 @@
         if(isset($_GET['loginsuccess']) && $_GET['loginsuccess'] == "true")
         {
             echo '<div class="alert alert-success alert-dismissible fade show mb-0" role="alert">
-                    <strong>Success !</strong> Logged in Successfully as - <b>'.$_SESSION['username'].'</b>
+                    <strong>Success !</strong> Logged in Successfully as - <b>'.$_SESSION['hosp_name'].'</b>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
