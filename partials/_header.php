@@ -36,7 +36,7 @@ echo '<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
     {
         echo 
-            '<p class="text-light mb-0 ml-3"> Welcome '.$_SESSION['username'].'</p>
+            '<p class="text-light mb-0 ml-3"> Welcome '.$_SESSION['hosp_name'].'</p>
             <a href="partials/_logout.php" class="btn btn-outline-success my-2 ml-3 my-sm-0">Logout</a>
             </div>
             </nav>';
