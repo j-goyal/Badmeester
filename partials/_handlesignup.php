@@ -6,12 +6,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     include '_dbconnect.php';
 
-    $username = $_POST['username'];
+    $h_name = $_POST['h_name'];
+    $h_address = $_POST['h_address'];
+    $phone = $_POST['phone'];
     $password = $_POST['pass'];
     $cpassword = $_POST['cpass'];
 
 
-    $existSql = "SELECT * FROM `users` where `username` = '$username' ";
+    $existSql = "SELECT * FROM `hospital` where `h_phone` = '$phone' ";
     $result = mysqli_query($conn, $existSql);
     $num = mysqli_num_rows($result);
 
@@ -20,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         if(($password == $cpassword))
         {
             $hash = password_hash($password, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO `users` (`username`, `user_pass`) VALUES ('$username', '$hash')";
+            $sql = "INSERT INTO `hospital` (`h_name`, `h_address`, `h_phone`, `h_password`) VALUES ('$h_name', '$h_address', '$phone', '$hash')";
             $result = mysqli_query($conn, $sql);
 
             if($result)
@@ -42,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
     else
     {
-        $showError = "Username ( <b>$username</b> ) already existed. Try different username";
+        $showError = "Account already Registered. Please Login to continue";
     }
     
 

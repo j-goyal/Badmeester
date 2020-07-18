@@ -1,16 +1,15 @@
 <?php
 
     $success = "false";
-    $showError = "false";
+    $showError = "";
     if($_SERVER['REQUEST_METHOD'] == 'POST')
     {
         include '_dbconnect.php';
 
-        $username = $_POST['username'];
+        $phone = $_POST['loginphone'];
         $password = $_POST['loginpass'];
 
-        //$sql = "SELECT * FROM `users` WHERE `username`= '$username' AND `password`= '$password' ";
-        $sql = "SELECT * FROM `users` WHERE `username`= '$username'";
+        $sql = "SELECT * FROM `hospital` WHERE `h_phone`= '$phone'";
         $result = mysqli_query($conn, $sql);
 
         $num = mysqli_num_rows($result);
@@ -18,14 +17,14 @@
         {
             $row = mysqli_fetch_assoc($result);
         
-            if(password_verify($password, $row['user_pass']))
+            if(password_verify($password, $row['h_password']))
             {
                 $success = "true";
 
                 session_start();
                 $_SESSION['loggedin'] = true;
-                $_SESSION['username'] = $username;
-                $_SESSION['userid'] = $row['user_id'];
+                $_SESSION['hosp_name'] = $row['h_name'];
+                $_SESSION['h_id'] = $row['h_id'];
 
                 
                 header("location: /capstone/index.php?loginsuccess=$success");
@@ -40,7 +39,7 @@
 
         else
         {
-            $showError = "Account does not exist for this username. Please Signup first then login";
+            $showError = "Invalid Credentials";
         }
      
         header("location: /capstone/index.php?loginsuccess=$success&error=$showError");

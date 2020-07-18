@@ -18,7 +18,7 @@
                     </div>
                     <div class="form-group">
                         <label for="h_address">Hospital Address</label>
-                        <textarea class="form-control" id="h_address" name="h_address" rows="2" placeholder="Enter Hospital Address" required></textarea>
+                        <textarea class="form-control" id="h_address" name="h_address" rows="2" placeholder="Enter Hospital full Address" required></textarea>
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
